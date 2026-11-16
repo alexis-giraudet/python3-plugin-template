@@ -1,0 +1,28 @@
+# See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/
+# See https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "python3-plugin-template"
+description = "Python 3 plugin template"
+dynamic = ["version"]
+authors = [{ name = "Alexis Giraudet", email = "alexis.giraudet@nav-timing.safrangroup.com" }]
+readme = "README.md"
+license = "GPL-3.0-or-later"
+dependencies = ["python3-project-template"]
+requires-python = ">=3.10"
+
+[project.entry-points."mynamespace.display"]
+excl = "mynamespace.myplugin:DisplayExcl"
+
+[project.optional-dependencies]
+test_requires = ["pytest"]
+
+[project.urls]
+Repository = "https://github.com/alexis-giraudet/python3-plugin-template.git"
+
+[tool.setuptools.dynamic]
+version = { attr = "mynamespace.myplugin.__version__" }

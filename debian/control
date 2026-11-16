@@ -1,0 +1,24 @@
+Source: python3-plugin-template
+Section: devel
+Priority: optional
+Maintainer: Alexis Giraudet <alexis.giraudet@nav-timing.safrangroup.com>
+Build-Depends:
+ debhelper-compat (= 13),
+ pybuild-plugin-pyproject,
+ python3-all,
+ python3-setuptools,
+ python3-pytest,
+ python3-project-template,
+Standards-Version: 4.7.3
+Homepage: <https://github.com/alexis-giraudet/python3-plugin-template>
+Rules-Requires-Root: no
+
+Package: python3-plugin-template
+Architecture: all
+Multi-Arch: foreign
+Depends:
+ ${misc:Depends},
+ ${python3:Depends},
+ python3-project-template,
+Description: Python 3 plugin template
+ Template of Python 3 plugin with Debian packaging.
